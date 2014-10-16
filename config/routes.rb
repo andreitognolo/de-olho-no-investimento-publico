@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :cities
+
   get 'welcome/index'
 
   resources :companies
