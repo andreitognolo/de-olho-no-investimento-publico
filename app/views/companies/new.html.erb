@@ -1,14 +1,18 @@
 <h1>New company</h1>
 
 <%= form_for @company do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br />
 
-    <%= f.label :cnpj %>
-    <%= f.text_field :cnpj %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, size: 30, class: "form-control" %>
+    </div>
 
-    <%= f.submit %>
+    <div class="form-group">
+      <%= f.label :cnpj %>
+      <%= f.text_field :cnpj, class: "form-control" %>
+    </div>
+
+    <%= f.submit "Salvar", class: "btn btn-default" %>
 <% end %>
 
 <%= link_to 'Back', companies_path %>
