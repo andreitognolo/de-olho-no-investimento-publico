@@ -8,7 +8,11 @@ class CompaniesController < ApplicationController
   end
 
   def fill_cities_name
-    state = params[:state]
+    cities_by_state(params[:state])
+    render '_fill_cities_name'
+  end
+
+  def cities_by_state(state)
     if state
       @cities = City.where(state: state)
     else
@@ -28,6 +32,7 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1/edit
   def edit
+    cities_by_state(@company.state)
   end
 
   # POST /companies
