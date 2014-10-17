@@ -7,6 +7,15 @@ class CompaniesController < ApplicationController
     @companies = Company.all
   end
 
+  def fill_cities_name
+    state = params[:state]
+    if state
+      @cities = City.where(state: state)
+    else
+      @cities = City.all
+    end
+  end
+
   # GET /companies/1
   # GET /companies/1.json
   def show
@@ -69,6 +78,6 @@ class CompaniesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
-      params.require(:company).permit(:name, :cnpj)
+      params.require(:company).permit(:name, :cnpj, :state, :city)
     end
 end

@@ -6,6 +6,11 @@ body {
     text-align: center;
 }
 
-form input[type="text"] {
+form .form-group input[type="text"],
+form .form-group select {
     width: 300px;
+}
+
+.display-none {
+    display: none;
 }

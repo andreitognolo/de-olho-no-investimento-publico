@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  resources :companies
+  resources :companies do
+    get 'fill_cities_name', on: :collection
+  end
 
   root 'welcome#index'
 

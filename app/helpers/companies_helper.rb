@@ -1,6 +1,6 @@
 module CompaniesHelper
 
   def all_states
-    ['', 'PE', 'SP']
+    ['', 'SP', 'PE']
   end
 end

@@ -12,7 +12,10 @@
 
     <div class="form-group">
       <%= f.label :state %>
-      <%= f.select :state, all_states %>
+      <%= f.select :state, all_states, {}, {class: 'form-control'} %>
+    </div>
+
+    <div class="form-group company_city_wrapper">
     </div>
 
     <%= f.submit "Salvar", class: "btn btn-default" %>
